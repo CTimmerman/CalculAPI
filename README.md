@@ -1,0 +1,2 @@
+# CalculAPI
+Simple calculator API.
