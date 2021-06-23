@@ -13,7 +13,7 @@ Invalid equations return code 400 and the reason as result:
 
     http://localhost:8888/?q={%22q%22:%221%20-%202%20/%20b6%22}
 
-    {"result": "Invalid equation. Characters should match ^[ 0-9.()*/+-]*$."}
+    {"result": "Invalid equation. Characters should match ^[ 0-9.()^|*/%+-]*$."}
 
 JSON via POST is easier via the terminal:
 
