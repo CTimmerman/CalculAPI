@@ -1,4 +1,4 @@
-"""A simple Tornado API using a simple calculator library."""
+"""A simple calculator JSON REST API."""
 
 import json, re
 from wsgiref.simple_server import make_server
