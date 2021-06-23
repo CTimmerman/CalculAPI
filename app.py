@@ -5,12 +5,17 @@ from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 
 
-VALID_PATTERN = "^[ 0-9.()*/+-]*$"
+VALID_PATTERN = "^[ 0-9.()^|*/%+-]*$"
 
 
 def calc(request):
     try:
-        equation = json.loads(request.params.get("q"))["q"]
+        q_param = request.params.get("q")
+        if q_param:
+            equation = json.loads(q_param)["q"]
+        else:
+            equation = request.json_body["q"]
+        print(f"Equation: {equation}")
         if re.match(VALID_PATTERN, equation):
             result = eval(equation)
         else:

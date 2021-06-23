@@ -15,6 +15,12 @@ Invalid equations return code 400 and the reason as result:
 
     {"result": "Invalid equation. Characters should match ^[ 0-9.()*/+-]*$."}
 
+JSON via POST is easier via the terminal:
+
+    curl 127.0.0.1:8888 -d '{"q": "1+1"}'
+
+    {"result": 2}
+
 ## Installation
 
     docker build calculapi .
